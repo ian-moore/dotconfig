@@ -1,0 +1,15 @@
+meta:
+  script: find ~/.config/nvim | sed 's/\/Users\/myusername/~/g'
+files:
+  - ~/.config/nvim/init.lua
+  - ~/.config/nvim/lua/git.lua
+  - ~/.config/nvim/lua/statusline.lua
+  - ~/.config/nvim/lua/wildmenu.lua
+  - ~/.config/nvim/lua/plugins.lua
+  - ~/.config/nvim/lua/lsp.lua
+  - ~/.config/nvim/lua/opts.lua
+  - ~/.config/nvim/lua/colorscheme.lua
+  - ~/.config/nvim/lua/keybindings.lua
+  - ~/.config/nvim/lua/tree.lua
+  - ~/.config/nvim/lua/treesitter.lua
+  - ~/.config/nvim/lazy-lock.json
