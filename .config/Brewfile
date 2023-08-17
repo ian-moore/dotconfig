@@ -1,0 +1,12 @@
+# brew install
+brew "awscli"
+brew "glow"
+brew "gpg"
+brew "lua-language-server"
+brew "neovim"
+brew "ripgrep"
+brew "shellcheck"
+brew "tfenv"
+brew "tflint"
+brew "tree"
+brew "yq"
