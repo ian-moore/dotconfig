@@ -25,7 +25,7 @@ local plugin_spec = {
   },
   {
     'nvim-treesitter/nvim-treesitter',
-    build = ":TSUPdate"
+    build = ":TSUpdate"
   },
   'neovim/nvim-lspconfig',
   'hrsh7th/nvim-cmp',
