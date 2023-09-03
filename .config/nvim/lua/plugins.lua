@@ -30,7 +30,10 @@ local plugin_spec = {
   'neovim/nvim-lspconfig',
   'hrsh7th/nvim-cmp',
   'hrsh7th/cmp-nvim-lsp',
-  'L3MON4D3/LuaSnip',
+  {
+    'L3MON4D3/LuaSnip',
+    dependencies = { 'rafamadriz/friendly-snippets', 'b0o/schemastore.nvim' }
+  }
 }
 
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"

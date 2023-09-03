@@ -1,4 +1,7 @@
 -- completions
+
+require("luasnip.loaders.from_vscode").lazy_load()
+
 local cmp = require('cmp')
 
 cmp.setup({
@@ -39,6 +42,8 @@ local on_lsp_attach = function(client, bufnr)
 end
 
 lspconfig.lua_ls.setup {
+  on_attach = on_lsp_attach,
+  capabilities = cmp_capabilities,
   settings = {
     Lua = {
       runtime = {
@@ -62,7 +67,10 @@ lspconfig.lua_ls.setup {
   },
 }
 
-lspconfig.tflint.setup{}
+lspconfig.tflint.setup{
+  capabilites = cmp_capabilities,
+  on_attach = on_lsp_attach
+}
 
 vim.g.terraform_fmt_on_save = 1
 vim.g.terraform_align = 1
@@ -72,8 +80,14 @@ lspconfig.yamlls.setup{
   capabilites = cmp_capabilities,
   settings = {
     yaml = {
-      schemas = {
-        ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+      schemaStore = {
+        enable = false,
+        url = "",
+      },
+      schemas = require('schemastore').yaml.schemas(),
+      customTags = {
+        "!Ref",
+        "!Sub"
       },
     },
   },
@@ -90,6 +104,8 @@ require('lspconfig').tsserver.setup{}
 local lspconfig_util = require("lspconfig/util")
 
 lspconfig.gopls.setup {
+  on_attach = on_lsp_attach,
+  capabilites = cmp_capabilities,
   cmd = {"gopls", "serve"},
   filetypes = {"go", "gomod"},
   root_dir = lspconfig_util.root_pattern("go.work", "go.mod", ".git"),
