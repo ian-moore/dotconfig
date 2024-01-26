@@ -87,7 +87,8 @@ lspconfig.yamlls.setup{
       schemas = require('schemastore').yaml.schemas(),
       customTags = {
         "!Ref",
-        "!Sub"
+        "!Sub",
+        "!Sub sequence",
       },
     },
   },

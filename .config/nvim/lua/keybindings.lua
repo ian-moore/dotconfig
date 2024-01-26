@@ -33,6 +33,10 @@ whichkey.register({
   ['<leader>t'] = { '<cmd>NvimTreeToggle<cr>', 'Toggle project tree' }
 })
 
+whichkey.register({
+  ['<leader>e'] = { vim.diagnostic.open_float, 'Open Code Diagnostic/Error' },
+})
+
 -- 's' to search forwards
 -- 'S' to search backwards
 require("leap").add_default_mappings()

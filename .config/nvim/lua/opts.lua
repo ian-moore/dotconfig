@@ -17,3 +17,5 @@ vim.opt.termguicolors = true
 
 -- Set this key before loading plugins
 vim.g.mapleader = ' ' -- <leader> key mapping
+
+vim.opt.swapfile = false
